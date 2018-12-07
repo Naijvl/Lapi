@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Post;
 
 class PostController extends Controller
@@ -11,26 +12,7 @@ class PostController extends Controller
 	{
 		$posts = Post::all();
 
-		$response = [
-			'status' => '',
-			'msg'    => '',
-			'data'   => $posts
-		];
-
-		return json_encode($response);
-	}
-
-	public function getPostById($id)
-	{
-		$post = Post::where('id', $id)->first();
-
-		$response = [
-			'status' => '',
-			'msg'    => '',
-			'data'   => $post
-		];
-
-		return json_encode($response);
+		return response()->json(['data' => $posts]);
 	}
 
 

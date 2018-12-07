@@ -14,9 +14,3 @@
 Route::get('/', function () {
     return view('welcome');
 });
-
-
-Route::group(['prefix' => 'v1'], function () {
-	Route::get('posts', 'PostController@getAllPosts');
-	Route::get('post/{id}', 'PostController@getPostById');
-});
