@@ -13,7 +13,7 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function ($router) {
+Route::group(['prefix' => 'v1'], function ($router) {
 
 	Route::post('login', 'AuthController@login');
 	Route::post('logout', 'AuthController@logout');
